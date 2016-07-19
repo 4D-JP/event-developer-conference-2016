@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN"
+"http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0" xmlns:d4="http://www.4d.com">
+  <file datatype="x-STR#" original="undefined" source-language="en-US" target-language="ja" product-version="v16">
+  <header>
+    <note></note>
+  </header>
+    <body>
+      <group>
+        <trans-unit resname="Demo...">
+          <target>新しいフォームメッセージコマンド…</target>
+        </trans-unit>
+        <trans-unit resname="Quit 4D">
+          <target>閉じる</target>
+        </trans-unit>
+        <trans-unit resname=" send ">
+          <target>からのメッセージ: </target>
+        </trans-unit>
+        <trans-unit resname="Log">
+          <target>ログ</target>
+        </trans-unit>
+        <trans-unit resname="Page 1">
+          <target>ページ 1</target>
+        </trans-unit>
+        <trans-unit resname="Page 2">
+          <target>ページ 2</target>
+        </trans-unit>
+      <trans-unit resname="Info">
+        <target><![CDATA[<span style="font-weight:bold">表示されたフォームのコンテキストでプロジェクトメソッドを実行するための新しいコマンドができました。任意のパラメーターを渡すことができ，フォームを表示しているのが別プロセスであっても実行することができます。<br/><br/>4Dフォームと情報を交換するためには，そのフォームのメッセージボックスにメッセージを送信します。<br/><br/>シンタックス:<br/><br/><span style="font-family:'Menlo';font-size:12pt;font-weight:normal"><span style="color:#009900;font-weight:bold">   CALL FORM</span>(<span style="color:#0432FF">formRef</span>;"projectMethod";<span style="color:#0432FF">vParam1</span>;<span style="color:#0432FF">vParam2</span>;<span style="color:#0432FF">vParam3;...</span>)</span></span>]]></target>
+      </trans-unit>
+      <trans-unit resname="Test">
+        <target><![CDATA[<span style="font-weight:bold">1° "Open MyForm"をクリックします。<br/>2° メッセージを入力します。<br/>3° "Call Form"ボタンをクリックします。違うメッセージでこれを繰り返すことができます。<br/>4° "Close MyForm"をクリックします。<br/></span>]]></target>
+      </trans-unit>
+     </group>
+      <group resname="[ProjectForm]">
+        <group resname="HDI">
+          <trans-unit resname="Demo">
+            <target>デモ</target>
+          </trans-unit>
+          <trans-unit resname="TxtSorry1">
+            <target>Do not attempt to open this HDI in Design mode using this version; if you do so, forms and/or methods could be altered because of missing functionality.</target>
+          </trans-unit>
+          <trans-unit resname="TxtSorry2">
+            <target>Sorry, this "How do I" (HDI)
+example must be used with
+a newer version of 4D
+(v15 R5 and above).</target>
+          </trans-unit>
+          <trans-unit resname="TxtVersion">
+            <target>(対象:4D v15 R5以降…)</target>
+          </trans-unit>
+          <trans-unit resname="TxtInfo1">
+            <target>教えて…</target>
+          </trans-unit>
+          <trans-unit resname="TxtInfo2">
+            <target>…新しいフォームメッセージコマンド</target>
+          </trans-unit>
+        </group>
+        <group resname="HDI2">
+          <trans-unit resname="Open MyForm">
+            <target>MyFormを開く</target>
+          </trans-unit>
+          <trans-unit resname="Open MyForm2">
+            <target>MyForm2を開く</target>
+          </trans-unit>
+          <trans-unit resname="Message1:">
+            <target>メッセージ:</target>
+          </trans-unit>
+          <trans-unit resname="Message2:">
+            <target>メッセージ:</target>
+          </trans-unit>
+          <trans-unit resname="Call MyForm">
+            <target>MyFormをコール:</target>
+          </trans-unit>
+          <trans-unit resname="Call MyForm2">
+            <target>MyForm2をコール:</target>
+          </trans-unit>
+          <trans-unit resname="Close MyForm">
+            <target>MyFormを閉じる:</target>
+          </trans-unit>
+          <trans-unit resname="Close MyForm2">
+            <target>MyForm2を閉じる:</target>
+          </trans-unit>
+        </group>
+        <group resname="FormMessage">
+          <trans-unit resname="Clear log">
+            <target>ログをクリア</target>
+          </trans-unit>
+      </group>
+      </group>
+    </body>
+  </file>
+</xliff>

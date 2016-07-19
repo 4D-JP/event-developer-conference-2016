@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN"
+"http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0" xmlns:d4="http://www.4d.com">
+  <file datatype="x-STR#" original="undefined" source-language="en-US" target-language="ja" product-version="v16">
+  <header>
+    <note></note>
+  </header>
+    <body>
+      <group>
+      <trans-unit resname="worker ">
+        <target>ワーカー </target>
+      </trans-unit>
+      <trans-unit resname="done!">
+        <target>完了しました!</target>
+      </trans-unit>
+     </group>
+      <group resname="[ProjectForm]">
+        <group resname="FormWorkers">
+         <trans-unit resname="Clear">
+            <target>クリア</target>
+          </trans-unit>
+          <trans-unit resname="Status">
+             <target>チェック</target>
+           </trans-unit>
+           <trans-unit resname="Kill all">
+              <target>ストップ</target>
+            </trans-unit>
+            <trans-unit resname="Create">
+               <target>スタート</target>
+             </trans-unit>
+        </group>
+        <group resname="FormMessage">
+         <trans-unit resname="Clear">
+            <target>クリア</target>
+          </trans-unit>
+        </group>
+      </group>
+    </body>
+  </file>
+</xliff>

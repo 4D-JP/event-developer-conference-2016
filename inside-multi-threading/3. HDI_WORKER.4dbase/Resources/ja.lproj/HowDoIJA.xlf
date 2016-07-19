@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN"
+"http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0" xmlns:d4="http://www.4d.com">
+  <file datatype="x-STR#" original="undefined" source-language="en-US" target-language="ja" product-version="v16">
+  <header>
+    <note></note>
+  </header>
+    <body>
+      <group>
+        <trans-unit resname="Demo...">
+          <target>プロセス間通信の新しい方法…</target>
+        </trans-unit>
+        <trans-unit resname="Quit 4D">
+          <target>閉じる</target>
+        </trans-unit>
+        <trans-unit resname="Create worker with message: ">
+          <target>メッセージと一緒にワーカーを作成しました: </target>
+        </trans-unit>
+        <trans-unit resname="Call worker with message: ">
+          <target>メッセージをワーカーに送りました: </target>
+        </trans-unit>
+        <trans-unit resname="Call worker for Kill with message: ">
+          <target>終了命令をワーカーに送りました: </target>
+        </trans-unit>
+        <trans-unit resname="Did receive call with: ">
+          <target>メッセージを受け取りました: </target>
+        </trans-unit>
+        <trans-unit resname="Did receive call to kill">
+          <target>終了命令を受け取りました</target>
+        </trans-unit>
+        <trans-unit resname="Time">
+          <target>時間</target>
+        </trans-unit>
+        <trans-unit resname="Worker name">
+          <target>ワーカー名</target>
+        </trans-unit>
+        <trans-unit resname="Activity">
+          <target>アクティビティ</target>
+        </trans-unit>
+        <trans-unit resname="Page 1">
+          <target>ページ 1</target>
+        </trans-unit>
+        <trans-unit resname="Page 2">
+          <target>ページ 2</target>
+        </trans-unit>
+      <trans-unit resname="Aborted">
+        <target>アボートされました</target>
+      </trans-unit>
+      <trans-unit resname="Does not exist">
+        <target>存在しません</target>
+      </trans-unit>
+      <trans-unit resname="Executing">
+        <target>実行中</target>
+      </trans-unit>
+      <trans-unit resname="Info">
+        <target><![CDATA[<span><span style="font-weight:bold">ワーカーは，特定のプロセスに対し，プロジェクトメソッドを実行するよう，依頼をするために使用されます。ワーカーは，それぞれ識別名・関連プロセス・メッセージボックスを持っています。<br/><br/>ワーカーは，コマンドを初めて使用したときに作成されます。同時に，ワーカーの関連プロセスも自動的に作成されます。New process関数で起動したプロセスとは違い，ワーカーの関連プロセスは，メソッドが実行された後も消えません。<br/><br/>4Dプロセス間で情報を交換するためには，目的のワーカーのメッセージボックスにメッセージを送ります。<br/><br/><br/><span style="font-size:14pt;color:#000B9F">新コマンドの説明</span></span><br/><br/><span style="color:#008000;font-weight:bold"><span style="font-size:14pt;color:#000B9F">     </span>CALL WORKER<br/><br/><span style="color:#000000"><span style="font-weight:normal">CALL WORKERは，メソッド名およびパラメーターをメッセージ化し，ワーカーのメッセージボックスに送付します。</span><br/><br/></span><span style="font-size:14pt;color:#000B9F">     </span>KILL WORKER<br/><span style="color:#000000"><br/><span style="font-weight:normal">KILL WORKERは，関連プロセスに対し，以降のCALL WORKERメッセージを処理しないように求め，そのまま消えるよう呼びかける働きをします。</span><br/></span><br/><span style="font-size:14pt;color:#000B9F">     </span>Current process name<span style="color:#000000;font-weight:normal"> <br/><br/>この新コマンドは，カレントプロセスの名前をそのまま返します。</span></span></span>]]></target>
+      </trans-unit>
+      <trans-unit resname="Test">
+        <target><![CDATA[<span style="font-weight:bold">1° ワーカーに送信する名前とメッセージを入力してください。<br/>2° "コール"または"キル"ボタンをクリックしてください。</span>]]></target>
+      </trans-unit>
+     </group>
+      <group resname="[ProjectForm]">
+        <group resname="HDI">
+          <trans-unit resname="Demo">
+            <target>デモ</target>
+          </trans-unit>
+          <trans-unit resname="TxtSorry1">
+            <target>Do not attempt to open this HDI in Design mode using this version; if you do so, forms and/or methods could be altered because of missing functionality.</target>
+          </trans-unit>
+          <trans-unit resname="TxtSorry2">
+            <target>Sorry, this "How do I" (HDI)
+example must be used with
+a newer version of 4D
+(v15 R5 and above).</target>
+          </trans-unit>
+          <trans-unit resname="TxtVersion">
+            <target>(対象:4D v15 R5以降…)</target>
+          </trans-unit>
+          <trans-unit resname="TxtInfo1">
+            <target>教えて…</target>
+          </trans-unit>
+          <trans-unit resname="TxtInfo2">
+            <target>…プロセス間通信の新しい方法</target>
+          </trans-unit>
+        </group>
+        <group resname="HDI2">
+          <trans-unit resname="Clear">
+            <target>クリア</target>
+          </trans-unit>
+          <trans-unit resname="Kill Worker">
+            <target>キル</target>
+          </trans-unit>
+          <trans-unit resname="Call Worker">
+            <target>コール</target>
+          </trans-unit>
+          <trans-unit resname="Activity Log:">
+            <target>アクティビティログ:</target>
+          </trans-unit>
+          <trans-unit resname="Worker name:">
+            <target>ワーカー名:</target>
+          </trans-unit>
+          <trans-unit resname="Message to send:">
+            <target>送信するメッセージ:</target>
+          </trans-unit>
+        </group>
+      </group>
+    </body>
+  </file>
+</xliff>
