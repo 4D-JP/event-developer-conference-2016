@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	</head>
+	<body>
+		<div id="map" style="height:100%;width:100%"/>
+		<script>
+			
+			var airports = <!--#4DHTML airports_json-->;
+			
+			var map = L.map('map').setView([<!--#4DHTML airports_latitude-->,<!--#4DHTML airports_longitude-->], 6);
+			
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    			attribution: 'copyright',
+    			maxZoom: 18
+			}).addTo(map);
+			
+			for (var i=0;i<airports.length;i++){
+				popupContent = "<b>"+airports[i].Location+"</b><br/><div id='"+airports[i].UUID+"'>"
+				popupContent += "<a href='#'>plus d\'info</a></div>"
+				L.marker([airports[i].Latitude,airports[i].Longitude])
+				.bindPopup(popupContent,{maxWidth:500,minWidth:300})
+				.addTo(map);
+			};
+			
+			map.on('popupopen', function(e) {
+  				//window.console.log(e.popup);
+  				//window.console.log(e.popup._contentNode.childNodes[2].id);
+  				var myDiv=e.popup._contentNode.childNodes[2];
+  				//window.console.log(myDiv);
+  				if (myDiv){
+  					myDiv.onclick = function(ee) {
+  						//window.console.log(ee);
+  						$4d.Airport_PlusInfo(myDiv.id,function(dollarZero){
+  							ee.target.parentElement.innerHTML=dollarZero;
+  						});
+  					};
+  				};
+			});
+		</script>
+	</body>
+</html>

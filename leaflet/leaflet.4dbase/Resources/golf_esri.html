@@ -1,0 +1,78 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Leaflet Golf map 4D Travel Agency sample</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+ 		<style>
+			//#map { height: 180px; }
+		</style>
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+		
+	</head>
+	<body>
+		<div id="map" style="width: 100%; height: 100%"></div>
+	</body>
+	<script type="text/javascript">
+		 //<![CDATA[
+			var gdata = <!--#4DHTML Golf_datas-->;
+			
+			var mapquest = new L.TileLayer("http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png", {
+        		maxZoom: 18,
+        		attribution: 'Fond de carte <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+      		});
+      
+			var map = new L.Map('map', {
+       			center: new L.LatLng(<!--#4DVAR Golf_latitude-->,<!--#4DVAR Golf_longitude-->),
+        		zoom: 15,
+        		layers: [mapquest]
+      		});
+
+			var marker = L.marker([<!--#4DVAR Golf_latitude-->,<!--#4DVAR Golf_longitude-->]).addTo(map);
+			
+			if (gdata.Holes!=undefined){
+			for (var i=0;i<gdata.Holes.length;i++){
+				var circle = L.circle([gdata.Holes[i].Green.Latitude, gdata.Holes[i].Green.Longitude], 20, {
+    				color: '',
+    				fillColor: 'green',
+    				fillOpacity: 0.7
+				}).addTo(map).bindPopup("<b>Green #"+gdata.Holes[i].number+"</b><br/>Par "+gdata.Holes[i].Par+"<br/>Hcp "+gdata.Holes[i].Hcp);
+						
+				var gHole=gdata.Holes[i];
+				for (var j=0;j<gHole.Tees.length;j++){
+					var circle = L.circle([gHole.Tees[j].Latitude, gHole.Tees[j].Longitude], 5, {
+    					color: 'black',
+    					weight:1,
+    					fillColor: gHole.Tees[j].tee,
+    					fillOpacity: 0.5
+					}).addTo(map)
+					.bindPopup("<b>Tee "+gHole.Tees[j].tee+" #"+gdata.Holes[i].number+"</b><br/>Length "+gHole.Tees[j].length+" m");
+					
+					var latlngs = [[gHole.Tees[j].Latitude, gHole.Tees[j].Longitude],[gdata.Holes[i].Green.Latitude, gdata.Holes[i].Green.Longitude]];
+					
+					var polyline = L.polyline(latlngs, {
+						color: gHole.Tees[j].tee,
+						dashArray:"1,1",
+						weight:2
+					}).addTo(map);
+				};
+			};
+			
+			};
+			
+			var baseLayers = {
+    			"CloudMade": cloudmade,
+    			"OpenStreetMap": osm
+			};
+
+			var overlays = {
+   				"Marker": marker,
+    			"Roads": roadsLayer
+			};
+
+			L.control.layers(baseLayers, overlays).addTo(map);
+
+ //]]>
+		</script>
+</html>

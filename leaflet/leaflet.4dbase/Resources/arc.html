@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<script src="<!--#4DHTML url_Relative-->/semicircle.js"></script>
+	</head>
+	<body>
+		<div id="map" style="height:100%;width:100%"/>
+		<script>
+			
+			var map = L.map('map').setView([<!--#4DHTML airports_latitude-->,<!--#4DHTML airports_longitude-->],6);
+			
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    			attribution: 'copyright',
+    			maxZoom: 18
+			}).addTo(map);
+			
+			TracerCercle = function (c) {
+				for (var i=0;i<c.arcs.length;i++){
+					L.circle([c.lat,c.lng],c.radius,
+					{
+    					color: c.arcs[i].color,
+    					weight: 0,
+    					fillOpacity: 0.5,
+    					startAngle: c.arcs[i].start,
+    					stopAngle: c.arcs[i].end
+					})
+					.bindPopup('<b>'+c.arcs[i].name+'</b><br/>'+c.arcs[i].value)
+					.addTo(map);
+				};
+			};
+		</script>
+	</body>
+</html>

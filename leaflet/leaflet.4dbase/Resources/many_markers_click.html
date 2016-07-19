@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	</head>
+	<body>
+		<div id="map" style="height:100%;width:100%"/>
+		<script>
+			
+			var airports = <!--#4DHTML airports_json-->;
+			
+			var map = L.map('map').setView([<!--#4DHTML airports_latitude-->,<!--#4DHTML airports_longitude-->], <!--#4DHTML zv_zoom-->);
+			
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    			attribution: 'copyright',
+    			maxZoom: 18
+			}).addTo(map);
+			
+			for (var i=0;i<airports.length;i++){
+				L.marker([airports[i].Latitude,airports[i].Longitude])
+				.bindPopup(airports[i].Location)
+				.addTo(map);
+			};
+			
+			zoomIn = function(){
+				map.zoomIn();
+				return map.getZoom();
+			};
+			zoomOut = function(){
+				map.zoomOut();
+				return map.getZoom();
+			};
+			getZoom = function(){
+				return map.getZoom();
+			};
+			
+			map.on('click', function(e) {        
+        		var popLocation= e.latlng;
+        		var popup = L.popup()
+        			.setLatLng(popLocation)
+        			.setContent(popLocation.lat+' '+popLocation.lng)
+        			.openOn(map);        
+    		});
+
+		</script>
+	</body>
+</html>

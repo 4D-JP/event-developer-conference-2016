@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	</head>
+	<body>
+		<div id="map" style="height:100%;width:100%"/>
+		<script>
+			
+			<!--#4DEVAL $mapParameters:=$1-->
+			
+			<!--#4DEVAL $centerLatitude:=46-->
+			<!--#4DIF (OB Is defined:C1231($mapParameters;"centerLatitude"))-->
+				<!--#4DEVAL $centerLatitude:=OB GET:C1224($mapParameters;"centerLatitude")-->
+			<!--#4DENDIF-->
+			
+			<!--#4DEVAL $centerLongitude:=1-->
+			<!--#4DIF (OB Is defined:C1231($mapParameters;"centerLongitude"))-->
+				<!--#4DEVAL $centerLongitude:=OB GET:C1224($mapParameters;"centerLongitude")-->
+			<!--#4DENDIF-->
+			
+			var map = L.map('map').setView([<!--#4DHTML $centerLatitude-->,<!--#4DHTML $centerLongitude-->],6);
+			
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    			attribution: 'copyright',
+    			maxZoom: 18
+			}).addTo(map);
+			
+			L.marker([<!--#4DHTML $centerLatitude-->,<!--#4DHTML $centerLongitude-->]).addTo(map);
+			
+		</script>
+	</body>
+</html>
